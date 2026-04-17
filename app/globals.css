@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff9f2;
+  --foreground: #4a4e69;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.page-shell {
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 249, 242, 0.95) 0%,
+      rgba(178, 226, 242, 0.35) 100%
+    ),
+    url("/kawaii-bg.png");
+  background-repeat: no-repeat, repeat;
+  background-position: center top, center;
+  background-size: cover, 360px;
+}
+
+.page-overlay {
+  min-height: 100vh;
+  background: rgba(255, 249, 242, 0.58);
+}
+
+@media (max-width: 1024px) {
+  .page-shell {
+    background-size: cover, 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-overlay nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
